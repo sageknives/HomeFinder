@@ -1,0 +1,12 @@
+<ion-view view-title="Home Finder" ng-controller="HomeCtrl as vm">
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="vm.loadList(true)"></ion-refresher>
+    <div class="list">
+        <a class="item item-icon-right"  ng-repeat="craigsItem in vm.craigslist" href="#" ng-click="vm.openUrl(craigsItem.link)"><img src="{{craigsItem.enclosure._resource}}" style="width:100px;height:100px"/>
+            <p style="white-space:normal;display:inline-block;height:100px;width:80%;">{{craigsItem.title[1].__cdata}}</p>
+        <p ng-bind-html="myHTML"></p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+    </div>
+  </ion-content>
+</ion-view>
